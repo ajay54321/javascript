@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>Signup Now!</h1>
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+            <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+            messages.info.forEach( el => { %>
+            <div class="alert alert-info"><%= el.msg %></div>
+            <% }) %> <% } %>  
+
+
+            <form action="/signup" method="POST">
+                <input type="hidden" name="remember" value="true">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">UserName</span>
+                  </label>
+                  <input type="text" placeholder="Full Name" class="input input-bordered" 
+                      id="userName" 
+                      name="userName" 
+                      autocomplete="name" 
+                      aria-describedby="name"
+                      required  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Email</span>
+                  </label>
+                  <input type="text" placeholder="email" class="input input-bordered" 
+                      id="exampleInputEmail1" 
+                      name="email" 
+                      autocomplete="email" 
+                      aria-describedby="emailHelp"
+                      required  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Password</span>
+                  </label>
+                  <input placeholder="password" class="input input-bordered"
+                      id="password" 
+                      name="password" 
+                      type="password"
+                      placeholder="password" 
+                      autocomplete="current-password" 
+                      required  
+                      />
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Confirm Password</span>
+                  </label>
+                  <input type="password" placeholder="Confirm Password" class="input input-bordered" 
+                      id="confirmPassword" 
+                      name="confirmPassword" 
+                      aria-describedby="confirmPassword"
+                      required  />
+                </div>
+                
+                </div>
+                <div class="form-control mt-6">
+                  <button class="btn btn-primary m-2"> Entry </button>
+                  <label for="my-modal-6" class="btn btn-primary m-2">Demo Account Info</label>
+                </div>
+                  </form>
+    </main>
+</body>
+</html>
