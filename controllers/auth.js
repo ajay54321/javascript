@@ -90,9 +90,9 @@ exports.postSignup = (req, res, next) => {
     password: req.body.password,
   });
 
-  User.find(
-    { $or: [{ email: req.body.email }, { userName: req.body.userName }] })
-      .then(   (err, existingUser) => {
+  User.findOne(
+    { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+    (err, existingUser) => {
       if (err) {
         return next(err);
       }
@@ -100,7 +100,7 @@ exports.postSignup = (req, res, next) => {
         req.flash("errors", {
           msg: "Account with that email address or username already exists.",
         });
-        return res.redirect("../login");
+        return res.redirect("../signup");
       }
       user.save((err) => {
         if (err) {
@@ -113,5 +113,6 @@ exports.postSignup = (req, res, next) => {
           res.redirect("/profile");
         });
       });
-      });
+    }
+  );
 };
