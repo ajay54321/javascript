@@ -1,0 +1,74 @@
+
+.orderBook{
+    display:grid;
+    grid-template-columns: minmax(auto, 20px) minmax(auto, 20px) 
+   }
+
+   .wrapper{
+     display:grid;
+     grid-template-columns: minmax(auto, 200px) minmax(auto, 160px) minmax(auto, 550px) minmax(auto, 180px);
+     grid-template-rows: minmax(auto, 250px) minmax(100px, 100px) minmax(auto, 250px) minmax(auto, 250px) ;
+     grid-template-areas:
+    "BuySell currentProducts canvasPad orderPad" 
+    "BuySell currentProducts viewControls orderPad"
+    "BuySell currentProducts historyPad orderPad"
+    "outputText outputText outputText outputText" ;
+    }
+
+    .itemOrders {
+     grid-area:orderPad; 
+     border-style: solid;
+     border-color: crimson;
+     border-radius: 10px;
+     width:100%;
+     overflow-y:scroll;
+   }
+   .itemHistory {
+   
+   grid-area:historyPad; 
+   border-style: solid;
+   border-color: crimson;
+   border-radius: 10px;
+   width:100%;
+   overflow-y:scroll;
+ }
+    .itemCanvas {
+        grid-area:canvasPad; 
+        border-style: solid;
+        border-color: crimson;
+        border-radius: 10px;
+        width:90%;
+    }
+   
+    .itemViewControls{
+     grid-area:viewControls;
+     border-style: solid;
+     border-color:blue;
+     border-width: 2;
+     height:30px;}
+
+     .genericBox{ border-style: solid;
+     border-color:blue;
+     border-width: 2;
+     height:100px;}
+
+    .itemCurrentProducts{
+      grid-area:currentProducts; 
+      border-style: solid;
+      border-color:green;
+      border-width: 2;
+     }
+   
+    .itemBuySell{
+    grid-area:BuySell;
+    border-style: solid;
+    border-color:black;
+    border-width: 2;}
+   
+    .itemOutputText{
+    grid-area:outputText;
+    border-style: solid;
+    border-color:black;
+    border-width: 2;}
+    
+.button1{height: 50px;}
