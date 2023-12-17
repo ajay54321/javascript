@@ -1,0 +1,108 @@
+<html>
+     <head>
+     <link rel="stylesheet" href="style.css">
+    </head>
+   
+   <body onload = "init();">
+    <div>
+      <p style="font-size: 2em;"><strong>User Name</strong>: <%= user.userName %></p>
+      <p style="font-size: 2em;"><strong>Email</strong>: <%= user.email %></p>
+      <a style="font-size: 2em;" href="/logout" class="col-3 btn btn-primary">Logout</a>
+    </div>
+    <!--MAIN DIV START-->
+     <div  class ="wrapper"> 
+     
+    <!--LEFT PANE BUY SELL POST-->
+   <div id = "itemBuySell" class = "itemBuySell"> 
+        <p>Welcome <%- user.id %></p>
+     <div class = "genericBox">
+     <br> $
+      <input id="postProductInput" value = "75" size = 2> 
+      QTY:
+      <input id = "productQuantityInput" value = 3 size = 1>
+      <button class = "button1"  onclick = "postRealProduct();" >POST PRODUCT</button>
+   </div>
+
+  <div class= "genericBox">
+    <br>  PRODUCT
+      <input id="sellInput" value = 2 size = 1> 
+      <button class = "button1" onclick = "realSell()">SELL</button>
+  </div>
+
+  <div class="genericBox">
+    <br> $
+     <input id="buyInput" value = "302" size = 1>
+     <button class = "button1" onclick = "realBuy()">BUY</button>
+  </div>
+ 
+  <div class="genericBox">
+    <br>$
+     <input id="offerInput" value = "10" size = 1>
+      QTY:
+     <input id = "offerQuantityInput" value = 1 size = 1>
+      <button class = "button1" onclick = "postRealOffer()">POST OFFER</button>
+    </div>
+   
+    <div class="genericBox">
+      BALANCE:  
+    <div id="USD">USD: $1.00</div>
+     PRODUCT 
+    <div id="product">P Amt: 0.1</div>
+    </div>
+
+    <div id="counter">000</div>
+  </div> 
+ 
+  <!--LEFT PANE-->
+
+  <!--PRODUCTS LIST-->
+  <div class = "itemCurrentProducts">
+  <div style="border-style: solid; border-color:darkred; border-width:2px;">CURRENT PRODUCTS</div>
+  <div style="height:250px; border-style: solid; border-color:darkred; border-width:2px; color:darkred;" id="prod01">1.91</div>
+   
+  <div style="border-style: solid; border-color:darkred; border-width:2px; " id="currentPrice">1.00</div>
+  <div style="border-style: solid; border-color:blue; border-width:2px; color:darkred;">CURRENT OFFERS</div>
+  <div style="height:250px; border-style: solid; border-color:blue; border-width:2px; padding-top:0px " id="off01">1.51</div>
+  </div> 
+   <!--PRODUCTS LIST-->
+
+  <!--CANVAS-->
+   <canvas id="canvasDemo" class = "itemCanvas">
+  </canvas> 
+  <!--CANVAS-->
+  
+ <!--ORDERBOOK-->
+  <div id="orderBook" class = "itemOrders">
+   <p>OPEN ORDERS</p>
+   <p id = "orderP"></p>
+  </div>
+ <!--ORDERBOOK-->
+
+ <!--ZOOM CONTROLS-->
+   <div class = "itemViewControls"> <!--div1-->
+      <button onclick = "previous();">BACK</button > 
+      <button onclick = "next();">NEXT</button > 
+      <button onclick = "zoomIn();">IN</button > 
+      <button onclick = "zoomOut();">OUT</button > 
+      <button onclick = "gotoEnd();">END</button > 
+   </div>
+<!--ZOOM CONTROLS-->
+
+<!--ORDER HISTORY-->
+<div id="tradeBook" class = "itemHistory">
+  <p>TRADE HISTORY</p>
+  <p id = "orderP"></p>
+ </div>
+
+ <!--OUTPUT DIV-->
+ <div class = "itemOutputText">
+  <p id="p1">OUTPUT TEXT</p>
+  </div>
+</div> 
+
+<script src="script.js">
+</script>
+</body>
+</html>
+
+  
